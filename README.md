@@ -1,3 +1,8 @@
+# 我還沒寫學習歷程
+> 記得比較各種時間
+
+
+
 # Make Selenium work on Github Actions 
 
 Scraping with BeautifulSoup on GitHub Actions is easy-peasy. But what about Selenium?? After you jump through some hoops it's *just as simple.*
