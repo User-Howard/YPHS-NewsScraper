@@ -19,7 +19,7 @@ for i in range(1, 3):
 # print(links)
 
 db = {}
-for link in tqdm(links):
+for link in tqdm(links[:10]):
     res = requests.get(link) 
     Soup = BeautifulSoup(res.text, 'html.parser')
 
