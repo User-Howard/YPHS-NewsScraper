@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 
 links = []
-for i in range(1, 50):
+for i in range(1, 2):
     url = f"https://www.yphs.tp.edu.tw/category/news/news1/page/{i}/"
     res = requests.get(url) 
     Soup = BeautifulSoup(res.text, 'html.parser')
@@ -19,7 +19,7 @@ for i in range(1, 50):
 # print(links)
 
 db = {}
-for link in tqdm(links):
+for link in tqdm(links[:5]):
     res = requests.get(link) 
     Soup = BeautifulSoup(res.text, 'html.parser')
 
@@ -40,5 +40,5 @@ for link in tqdm(links):
     # print(len(db[nd["time"]]))
     # print(nd["time"])
 
-with open("data.json", 'w') as f:
-    json.dump(db, f, indent=4)
+with open("data.json", 'w', encoding="utf8") as f:
+    json.dump(db, f, indent=4, ensure_ascii=False)
