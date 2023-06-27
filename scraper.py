@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 
 links = []
-for i in range(1, 2):
+for i in range(1, 50):
     url = f"https://www.yphs.tp.edu.tw/category/news/news1/page/{i}/"
     res = requests.get(url) 
     Soup = BeautifulSoup(res.text, 'html.parser')
@@ -19,7 +19,7 @@ for i in range(1, 2):
 # print(links)
 
 db = {}
-for link in tqdm(links[:5]):
+for link in tqdm(links):
     res = requests.get(link) 
     Soup = BeautifulSoup(res.text, 'html.parser')
 
