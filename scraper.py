@@ -8,7 +8,7 @@ import concurrent.futures
 
 
 links = []
-for i in range(1, 4):
+for i in range(1, 50):
     url = f"https://www.yphs.tp.edu.tw/category/news/news1/page/{i}/"
     res = requests.get(url) 
     Soup = BeautifulSoup(res.text, 'html.parser')
