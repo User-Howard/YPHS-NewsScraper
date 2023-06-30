@@ -28,7 +28,7 @@ for link in tqdm(links):
     nd = {  "title":Soup.find(class_ = "newstd").text,
             "content":Soup.find(class_ = "content").text,
             "time":Soup.select(".news_date .newstd")[0].text,
-            "category":[i.text for i in Soup.select(".news_cat .newstd")],
+            "category":Soup.select(".news_cat .newstd")[0].text,
             "unit":Soup.select(".news_unit .newstd")[0].text,
             "type":Soup.select(".news_type .newstd")[0].text,
             "view":int(Soup.select(".news_view .newstd")[0].text.strip().replace(',', '')),
