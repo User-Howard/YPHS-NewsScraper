@@ -22,7 +22,7 @@ def scrape(link):
     res = requests.get(link) 
     Soup = BeautifulSoup(res.text, 'html.parser')
 
-    print(Soup.find(class_ = "newstd").text)
+    # print(Soup.find(class_ = "newstd").text)
 
     nd = {  "title":Soup.find(class_ = "newstd").text,
             "content":Soup.find(class_ = "content").text,
@@ -31,8 +31,8 @@ def scrape(link):
     if nd["time"] not in db:
         db[nd["time"]] = []
     db[nd["time"]].append(nd)
-    print(len(db[nd["time"]]))
-    print(nd["time"])
+    # print(len(db[nd["time"]]))
+    # print(nd["time"])
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
     executor.map(scrape, links)
