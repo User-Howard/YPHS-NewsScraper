@@ -25,7 +25,7 @@ jobs:
       - name: Install all necessary packages
         run: pip install requests beautifulsoup4 pandas webdriver-manager selenium
       - name: Run the scraping script
-        run: python scraper.py
+        run: python scraper2.py
 
       - name: Commit and push if content changed
         run: |-
